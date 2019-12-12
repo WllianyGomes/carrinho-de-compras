@@ -1,0 +1,12 @@
+com/mycompany/teste05/controller/ProdutosController.class
+com/mycompany/teste05/entity/Produto.class
+com/mycompany/teste05/entity/ItemVenda.class
+com/mycompany/teste05/entity/Venda_.class
+com/mycompany/teste05/dao/ProdutoDAO.class
+com/mycompany/teste05/util/JpaUtil.class
+com/mycompany/teste05/entity/Produto_.class
+com/mycompany/teste05/dao/VendaDAO.class
+com/mycompany/teste05/controller/VendasController.class
+com/mycompany/teste05/entity/ItemVenda_.class
+com/mycompany/teste05/dao/ItemVendaDAO.class
+com/mycompany/teste05/entity/Venda.class
