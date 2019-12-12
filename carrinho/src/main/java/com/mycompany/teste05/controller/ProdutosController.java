@@ -5,6 +5,7 @@ import br.com.caelum.vraptor.Result;
 import com.mycompany.teste05.dao.ProdutoDAO;
 import com.mycompany.teste05.entity.Produto;
 import java.util.List;
+import javax.inject.Inject;
 
 /**
  *
@@ -12,9 +13,12 @@ import java.util.List;
  */
 @Controller
 public class ProdutosController {
+    
+    @Inject
+    ProdutoDAO dao;
 
-    ProdutoDAO dao = new ProdutoDAO();
-
+    @Inject
+    Result result;
     public void form() {
 
     }
@@ -23,7 +27,7 @@ public class ProdutosController {
         return dao.lista();
     }
     
-    public void salvar(Produto produto, Result result) {
+    public void salvar(Produto produto) {
         if (produto.getId() == null) {
             dao.add(produto);
         } else {
@@ -32,14 +36,13 @@ public class ProdutosController {
         result.redirectTo(this).lista();
     }
     
-    
-    public void editar(Long id, Result result) {
+    public void editar(Long id) {
         Produto produto = dao.buscarProduto(id);
         result.include(produto);
         result.of(this).form();
     }
     
-    public void excluir(Long id, Result result) {
+    public void excluir(Long id) {
         dao.remove(id);
         result.redirectTo(this).lista();
     }

@@ -17,8 +17,11 @@ import javax.inject.Inject;
 @Controller
 public class VendasController {
 
-    VendaDAO dao = new VendaDAO();
-    ProdutoDAO pdao = new ProdutoDAO();
+    @Inject
+    VendaDAO dao;
+    
+    @Inject
+    ProdutoDAO pdao;
     
     @Inject
     Venda venda; //venda da sessão
@@ -52,8 +55,8 @@ public class VendasController {
     }
 
     public void editar(Long id, Result result) {
-        Venda venda = dao.buscarVenda(id);
-        result.include(venda); 
+        Venda venda1 = dao.buscarVenda(id);
+        result.include(venda1); 
         result.of(this).formVenda();
     }
 
